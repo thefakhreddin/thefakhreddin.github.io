@@ -160,18 +160,22 @@ nav {
 .card:hover { background: var(--surface); }
 .card-thumb {
   width: 100%;
-  height: 150px;
+  height: 160px;
   background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 10px;
   font-family: 'IBM Plex Mono', monospace;
-  color: var(--muted);
+  color: var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
+.card-thumb::after { content: '[ no image ]'; }
+.card-thumb:has(img[src]:not([src=""])) { background: transparent; }
+.card-thumb:has(img[src]:not([src=""]))::after { display: none; }
 .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card-thumb img:not([src]), .card-thumb img[src=""] { display: none; }
 .card-body {
   padding: 14px 16px 16px;
   flex: 1;
@@ -240,6 +244,32 @@ nav {
 .contact-section h2 { font-size: 1.4rem; font-weight: 300; margin-bottom: 0.5rem; }
 .contact-section p { font-size: 13px; color: var(--muted); margin-bottom: 2rem; }
 .contact-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ── PROJECT GROUP LABEL ──────────────────────────────── */
+.project-group-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0 1rem 0;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── SOURCE BADGES ────────────────────────────────────── */
+.badge-source {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  padding: 2px 6px;
+  color: #fff;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.badge-instructables { background: #e65c00; }
+.badge-personal      { background: var(--ink); }
+.badge-youtube       { background: #cc0000; }
+.badge-hackster      { background: #2e7d57; }
 
 /* ── FOOTER ───────────────────────────────────────────── */
 footer {
