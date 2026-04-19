@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>                                        <!-- ← CHANGE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">YOUR NAME</span>                         <!-- ← CHANGE -->
+  <ul class="nav-links">
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">// engineer &amp; maker</p>
+  <h1>I build things.<br>Hardware. Software.<br>Whatever it takes.</h1>  <!-- ← CHANGE -->
+  <p class="hero-bio">
+    <!-- ← CHANGE: 2–3 sentences. Keep it short. -->
+    Mechanical and software projects documented on Instructables, Hackster, and YouTube.
+    Based in Vancouver, BC.
+  </p>
+  <div class="hero-pills">
+    <!-- ← CHANGE / ADD / REMOVE -->
+    <span class="pill">mechanical design</span>
+    <span class="pill">software</span>
+    <span class="pill">electronics</span>
+    <span class="pill">youtube</span>
+  </div>
+  <div class="hero-actions">
+    <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
+    <a href="#projects" class="btn">projects →</a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-head">
+    <span class="section-label">projects</span>
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">all</button>
+      <button class="filter-btn" data-filter="mechanical">mechanical</button>
+      <button class="filter-btn" data-filter="software">software</button>
+      <button class="filter-btn" data-filter="video">video</button>
+      <button class="filter-btn" data-filter="electronics">electronics</button>
+    </div>
+  </div>
+
+  <div class="grid" id="project-grid">
+
+    <!--
+      HOW TO ADD A PROJECT:
+      1. Copy any card block below
+      2. Set data-type: mechanical | software | video | electronics
+      3. Set href to your Instructables / Hackster / YouTube URL
+      4. For a real photo: replace the "[ no image ]" div with:
+            <img src="images/yourfile.jpg" alt="description" />
+         (put your photos in an /images/ folder next to index.html)
+      5. Fill in type, title, description, source
+    -->
+
+    <!-- PROJECT 1 -->
+    <a class="card" data-type="mechanical" href="https://www.instructables.com/YOUR-URL/" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">mechanical</p>
+        <p class="card-title">CNC pen plotter</p>                <!-- ← CHANGE -->
+        <p class="card-desc">NEMA stepper XY stage from aluminium extrusions. Full BOM and CAD included.</p>
+        <div class="card-footer">
+          <span class="card-source">instructables</span>
+          <span class="card-link">open →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 2 -->
+    <a class="card" data-type="software" href="https://www.hackster.io/YOUR-URL/" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">software</p>
+        <p class="card-title">IoT sensor dashboard</p>           <!-- ← CHANGE -->
+        <p class="card-desc">MQTT + React dashboard. Monitors workshop temp and humidity in real-time.</p>
+        <div class="card-footer">
+          <span class="card-source">hackster.io</span>
+          <span class="card-link">open →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 3 -->
+    <a class="card" data-type="video" href="https://www.youtube.com/watch?v=YOUR-ID" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">video</p>
+        <p class="card-title">Robotic arm build series</p>       <!-- ← CHANGE -->
+        <p class="card-desc">6-DOF desktop arm. 4-part build series, full CAD files in description.</p>
+        <div class="card-footer">
+          <span class="card-source">youtube</span>
+          <span class="card-link">watch →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 4 -->
+    <a class="card" data-type="electronics" href="https://www.instructables.com/YOUR-URL/" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">electronics</p>
+        <p class="card-title">Custom motor driver PCB</p>        <!-- ← CHANGE -->
+        <p class="card-desc">Dual H-bridge designed in KiCad. Fabricated at JLCPCB. Open source.</p>
+        <div class="card-footer">
+          <span class="card-source">instructables</span>
+          <span class="card-link">open →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 5 — blank slot -->
+    <a class="card" data-type="mechanical" href="#" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">mechanical</p>
+        <p class="card-title">Your project title</p>             <!-- ← CHANGE -->
+        <p class="card-desc">Short description. What did you build, what does it do.</p>
+        <div class="card-footer">
+          <span class="card-source">instructables</span>
+          <span class="card-link">open →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 6 — blank slot -->
+    <a class="card" data-type="software" href="#" target="_blank" rel="noopener">
+      <div class="card-thumb">[ no image ]</div>
+      <div class="card-body">
+        <p class="card-type">software</p>
+        <p class="card-title">Your project title</p>             <!-- ← CHANGE -->
+        <p class="card-desc">Short description. What did you build, what does it do.</p>
+        <div class="card-footer">
+          <span class="card-source">hackster.io</span>
+          <span class="card-link">open →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ← PASTE MORE CARDS HERE -->
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <h2>About</h2>
+      <p>
+        <!-- ← CHANGE -->
+        Engineer and maker. I like building things that sit at the edge of
+        hardware and software — and documenting the process so others can
+        replicate or improve on it.
+      </p>
+      <p>Based in Vancouver, BC. Open to freelance and collaborations.</p>
+      <br />
+      <a href="resume.pdf" download class="btn btn-primary">resume.pdf ↓</a>
+    </div>
+    <div>
+      <p class="section-label" style="margin-bottom:1rem;">tools &amp; skills</p>
+      <ul class="skills-list">
+        <!-- ← CHANGE to your actual tools -->
+        <li>Fusion 360 / SolidWorks</li>
+        <li>3D printing &amp; CNC machining</li>
+        <li>Python / C / C++</li>
+        <li>Arduino / ESP32 / Raspberry Pi</li>
+        <li>KiCad PCB design</li>
+        <li>React / JavaScript</li>
+        <li>Git &amp; GitHub</li>
+        <li>DaVinci Resolve</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2>Contact</h2>
+  <p>Project inquiries, collaborations, or just to say hi.</p>
+  <div class="contact-links">
+    <!-- ← CHANGE each href -->
+    <a href="mailto:you@email.com" class="btn">email</a>
+    <a href="https://github.com/yourusername" class="btn" target="_blank">github</a>
+    <a href="https://youtube.com/@yourchannel" class="btn" target="_blank">youtube</a>
+    <a href="https://www.instructables.com/member/yourusername/" class="btn" target="_blank">instructables</a>
+    <a href="https://www.hackster.io/yourusername" class="btn" target="_blank">hackster</a>
+    <a href="https://linkedin.com/in/yourusername" class="btn" target="_blank">linkedin</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© <span id="year"></span> Your Name</span>               <!-- ← CHANGE -->
+  <span>github pages</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.card').forEach(c => {
+        c.dataset.hidden = (f === 'all' || c.dataset.type === f) ? 'false' : 'true';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
