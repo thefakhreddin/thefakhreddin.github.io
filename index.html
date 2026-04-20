@@ -12,9 +12,12 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-name">AMIR AMIRHOSSEINI</span>
+  <span class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</span>
   <ul class="nav-links">
     <li><a href="#projects">projects</a></li>
+    <li><a href="#awards">awards</a></li>
+    <li><a href="#research">research</a></li>
+    <li><a href="#other">other</a></li>
     <li><a href="#about">about</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
@@ -22,25 +25,32 @@
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-tag">// mechatronic systems engineer</p>
-  <h1>I build things.<br>Hardware. Software.<br>Whatever it takes.</h1>
-  <p class="hero-bio">
-    Mechatronics engineer with nearly a decade of experience building
-    production-grade hardware and software — from medical device automation
-    to award-winning sensors and STEM robotics platforms.
-    Based in Vancouver, BC.
-  </p>
-  <div class="hero-pills">
-    <span class="pill">mechatronics</span>
-    <span class="pill">hardware</span>
-    <span class="pill">software</span>
-    <span class="pill">pcb design</span>
-    <span class="pill">robotics</span>
-    <span class="pill">sensors</span>
+  <div class="hero-content">
+    <p class="hero-tag">// mechatronic systems engineer</p>
+    <h1>I build things.<br>Hardware. Software.<br>Whatever it takes.</h1>
+    <p class="hero-bio">
+      Mechatronics engineer with nearly a decade of experience building
+      production-grade hardware and software — from medical device automation
+      to award-winning sensors and STEM robotics platforms.
+      Based in Vancouver, BC.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">mechatronics</span>
+      <span class="pill">hardware</span>
+      <span class="pill">software</span>
+      <span class="pill">pcb design</span>
+      <span class="pill">robotics</span>
+      <span class="pill">sensors</span>
+    </div>
+    <div class="hero-actions">
+      <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
+      <a href="#projects" class="btn">projects →</a>
+    </div>
   </div>
-  <div class="hero-actions">
-    <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
-    <a href="#projects" class="btn">projects →</a>
+  <div class="hero-photo">
+    <!-- Save your LinkedIn photo to assets/img/profile.jpg and it will appear here -->
+    <img src="assets/img/profile.jpg" alt="Fakhreddin (Amir) Amirhosseini" onerror="this.parentElement.classList.add('no-photo')" />
+    <span class="photo-placeholder">[ photo ]</span>
   </div>
 </section>
 
@@ -57,8 +67,76 @@
     </div>
   </div>
 
-  <!-- Cards and group headers are injected by js/projects.js + js/main.js -->
+  <!-- Featured: Tower Crane -->
+  <a class="featured-banner" href="https://www.instructables.com/A-Fully-Functional-Tower-Crane-Desktop-Replica-Wit/" target="_blank" rel="noopener">
+    <img src="https://content.instructables.com/FIH/XUJQ/KHG9T9KW/FIHXUJQKHG9T9KW.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="Tower Crane Desktop Replica" />
+    <div class="featured-overlay">
+      <span class="featured-tag">// featured · mechanical design</span>
+      <h3>Tower Crane Desktop Replica</h3>
+      <p>Fully functional desktop-scale tower crane with working lift, slew, and trolley. Arduino-controlled, 3D printed, and LEGO-compatible.</p>
+    </div>
+  </a>
+
+  <p class="lego-note">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</p>
+
+  <!-- Cards and group headers injected by js/projects.js + js/main.js -->
   <div class="grid" id="project-grid"></div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section" id="awards">
+  <div class="awards-inner">
+    <span class="section-label">awards &amp; recognitions</span>
+    <ul class="awards-list">
+      <li>
+        <span class="award-year">Jan 2026</span>
+        <span class="award-title">Nominated for the Governor General's Academic Medal</span>
+      </li>
+      <li>
+        <span class="award-year">Oct 2025</span>
+        <span class="award-title">Outstanding Lecture Award — IEEE Sensors Conference <span class="award-note">among 400+ accepted works</span></span>
+      </li>
+      <li>
+        <span class="award-year">2023–25</span>
+        <span class="award-title">Graduate Fellowship Recipient <span class="award-note">3×</span></span>
+      </li>
+      <li>
+        <span class="award-year">2016–26</span>
+        <span class="award-title">Full Scholarship — all levels of education</span>
+      </li>
+      <li>
+        <span class="award-year">2017–23</span>
+        <span class="award-title">Featured on Hackster.io &amp; Instructables.com <span class="award-note">multiple times</span></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="papers-section" id="research">
+  <div class="papers-inner">
+    <span class="section-label">research &amp; publications</span>
+    <div id="papers-list">
+      <!-- Papers are added here. Upload PDFs to assets/papers/ and ask me to read and describe them. -->
+      <p class="papers-empty">Papers coming soon — upload PDFs to <code>assets/papers/</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER -->
+<section class="other-section" id="other">
+  <div class="other-inner">
+    <span class="section-label">other</span>
+    <p class="other-intro">
+      Here are some more random things I find interesting but couldn't find a neat place for elsewhere.
+      Think of this as a random walk through my past experiences — a little bit of every project and every rabbit hole.
+      And yes, everything you'll stumble upon in this page was built by me.
+    </p>
+    <div class="other-grid" id="other-grid">
+      <!-- Add images/videos to assets/other/ and ask me to build this section out -->
+      <p class="other-empty">More coming — drop files in <code>assets/other/</code></p>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -112,7 +190,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span>© <span id="year"></span> Amir Amirhosseini</span>
+  <span>© <span id="year"></span> Fakhreddin (Amir) Amirhosseini</span>
   <span>github pages</span>
 </footer>
 
