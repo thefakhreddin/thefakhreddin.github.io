@@ -68,8 +68,8 @@ nav {
 .hero-content { flex: 1; }
 .hero-tag {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  color: rgba(240,237,232,0.35);
+  font-size: 12px;
+  color: rgba(240,237,232,0.7);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
@@ -236,8 +236,8 @@ nav {
 }
 .featured-tag {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
   letter-spacing: 0.08em;
   margin-bottom: 0.6rem;
 }
@@ -253,9 +253,28 @@ nav {
 /* ── LEGO NOTE ────────────────────────────────────────── */
 .lego-note {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  color: var(--muted);
+  font-size: 12px;
+  color: var(--ink);
   margin-bottom: 1.5rem;
+}
+
+/* ── GRID NOTE (full-width row inside .grid) ──────────── */
+.grid-note {
+  grid-column: 1 / -1;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink);
+  padding: 0.75rem 20px 1rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* ── PORTFOLIO NOTE ───────────────────────────────────── */
+.portfolio-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink);
+  margin-top: 0.5rem;
 }
 
 /* ── GRID + CARDS ─────────────────────────────────────── */

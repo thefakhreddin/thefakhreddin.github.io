@@ -13,10 +13,10 @@
 
 const PROJECTS = [
 
-  // ── Mechanical / LEGO Design ─────────────────────────────────────────────
+  // ── LEGO Mechanical ──────────────────────────────────────────────────────
 
   {
-    group:    "mechanical / lego design",
+    group:    "lego mechanical",
     type:     "mechanical",
     category: "mechanical · lego design",
     title:    "DIY Quadruped Robot",
@@ -152,17 +152,17 @@ const PROJECTS = [
     img:      "https://content.instructables.com/FW1/U5ON/LE8JKHMV/FW1U5ONLE8JKHMV.jpg"
   },
 
-  // ── Software / Open Source ────────────────────────────────────────────────
+  // ── Robotics / ROS ────────────────────────────────────────────────────────
 
   {
-    group:    "software / open source",
+    group:    "robotics / ros",
     type:     "software",
     category: "software · deep learning · ros",
     title:    "LPM-Net: Deep MPC Local Planner",
     desc:     "Predictive deep learning model for ROS robot navigation. 50% less compute than classic MPC. Published in a journal and packaged for ROS.",
     source:   "github",
     url:      "https://github.com/thefakhreddin/deep_mpc_local_planner",
-    img:      "https://private-user-images.githubusercontent.com/39326357/488602364-af6847a0-cb7f-403b-a214-a4b70d04c7b4.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzY2NDUyMjMsIm5iZiI6MTc3NjY0NDkyMywicGF0aCI6Ii8zOTMyNjM1Ny80ODg2MDIzNjQtYWY2ODQ3YTAtY2I3Zi00MDNiLWEyMTQtYTRiNzBkMDRjN2I0LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDIwVDAwMjg0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhY2IyZDM0OGMwMjYyMjgzYzY3MGQ0MGQ4ZjkxMDM4ZDM2M2YxYTEzYWFjNDVhMzBiZWU5OTM0MGNjNjhmZGYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmpwZWcifQ.Ft_9BbKhkbAJKrMMac_RlR835P5QMN_zDPBLHsjxDxs"
+    img:      "https://github.com/user-attachments/assets/af6847a0-cb7f-403b-a214-a4b70d04c7b4"
   },
   {
     type:     "software",

@@ -38,6 +38,9 @@ function buildCard(p) {
   PROJECTS.forEach(p => {
     if (p.group && p.group !== lastGroup) {
       html += `<div class="grid-group-label" data-filter-group="${p.type}">${p.group}</div>`;
+      if (p.group === 'lego mechanical') {
+        html += `<div class="grid-note" data-filter-group="${p.type}">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</div>`;
+      }
       lastGroup = p.group;
     }
     html += buildCard(p);
@@ -57,7 +60,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       card.dataset.hidden = (f === 'all' || card.dataset.type === f) ? 'false' : 'true';
     });
 
-    document.querySelectorAll('.grid-group-label').forEach(label => {
+    document.querySelectorAll('.grid-group-label, .grid-note').forEach(label => {
       const group = label.dataset.filterGroup;
       label.style.display = (f === 'all' || f === group) ? '' : 'none';
     });
