@@ -413,50 +413,50 @@ nav {
 .paper-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--border); }
 
 /* ── ALBUM ────────────────────────────────────────────── */
-.album-section { border-top: 1px solid var(--border); }
-.album-intro {
+.gallery-section { border-top: 1px solid var(--border); }
+.gallery-intro {
   font-size: 14px;
   color: var(--muted);
   max-width: 580px;
   margin-bottom: 3rem;
   line-height: 1.7;
 }
-.album-intro a {
+.gallery-intro a {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--border);
   transition: text-decoration-color 0.15s;
 }
-.album-intro a:hover { text-decoration-color: var(--ink); }
-.album-grid {
+.gallery-intro a:hover { text-decoration-color: var(--ink); }
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
 }
-.album-item {
+.gallery-item {
   background: var(--bg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.album-item img {
+.gallery-item img {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }
-.album-item:hover img { transform: scale(1.04); }
-.album-item video {
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item video {
   width: 100%;
   aspect-ratio: 16/9;
   display: block;
   background: var(--ink);
 }
-.album-caption {
+.gallery-caption {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10px;
   color: var(--muted);
