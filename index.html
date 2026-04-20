@@ -136,7 +136,72 @@
     <p class="section-kicker">publications</p>
     <h2>Research &amp; Publications</h2>
     <div id="papers-list">
-      <p class="papers-empty">Upload PDFs to <code>assets/papers/</code> and I'll write them up here.</p>
+
+      <div class="paper-card">
+        <div>
+          <p class="paper-meta">IEEE Sensors Journal · 2025 · with A. Ali, J. Ziegler, J. Walmsley, B. Bahreyni</p>
+          <p class="paper-title">Inductive Sensors for Continuous Bath and Metal Level Measurement in Harsh Aluminum Smelting Environments</p>
+          <p class="paper-abstract">
+            Aluminum smelting cells operate at ~960 °C with large DC currents and corrosive molten cryolite — a brutal
+            environment that has historically defeated every in-situ sensor. The current industry standard is still a
+            technician poking a dipstick into the pot. This paper proposes two non-contact inductive sensors based on
+            eddy-current principles that measure cryolite bath thickness and molten aluminum pool depth without touching
+            the melt. A single-inductor design establishes the core mechanism; a differential induction-balance
+            configuration improves resolution. Both are validated analytically, in COMSOL simulation, and in furnace
+            experiments with real cryolite, demonstrating clear depth discrimination — a first step toward closing
+            the loop on bath geometry control.
+          </p>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div>
+          <p class="paper-meta">IEEE Sensors Conference (Outstanding Lecture Award) · Oct 2025 · with A. Ali, B. Bahreyni</p>
+          <p class="paper-title">Real-Time Monitoring of Molten Cryolite Composition Using a Resonant Capacitive Sensor</p>
+          <p class="paper-abstract">
+            Companion work to the inductive level sensor above: instead of measuring where the molten aluminum is,
+            this paper targets what the bath is made of. Aluminum fluoride concentration drifts during smelting and
+            must be kept in a tight range to control liquidus temperature and conductivity — but measuring it in real
+            time has been an open problem. The solution here is a ceramic-coated passive LC resonator probe that
+            partially submerges in the bath. Changes in bath conductivity detune the resonator's quality factor in
+            a predictable way, letting you read out AlF₃ concentration from an impedance measurement. Validated at
+            multiple concentrations in molten cryolite. This talk was awarded Outstanding Lecture at the conference
+            among 400+ accepted works.
+          </p>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div>
+          <p class="paper-meta">Neural Processing Letters · Jan 2025 · with Z. Nilforoushan, S. L. Mirtaheri</p>
+          <p class="paper-title">LPM-Net: A Data-Driven Resource-Efficient Predictive Motion Planner for Mobile Robots</p>
+          <p class="paper-abstract">
+            Model predictive control (MPC) makes smooth, collision-aware robot paths but is computationally heavy —
+            a problem on small embedded hardware. LPM-Net replaces the MPC solver with a CNN + LSTM network trained
+            via imitation learning to mimic the planner's outputs while satisfying the same kinodynamic constraints.
+            Once trained, inference runs on GPU/TPU-enabled SoCs at roughly half the processing power of the
+            conventional MPC, with a marginal increase in goal-reaching hesitation. Packaged as a ROS-compatible
+            local planner and open-sourced on GitHub.
+          </p>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div>
+          <p class="paper-meta">IEEE Transactions on Green Communications and Networking · Jun 2022 · with Y. Mafi, S. A. Hosseini, A. Azari, M. Masoudi, M. Vaezi</p>
+          <p class="paper-title">Ultra-Low-Power IoT Communications: A Novel Address Decoding Approach for Wake-Up Receivers</p>
+          <p class="paper-abstract">
+            A key challenge in massive IoT deployments is keeping billions of battery-powered devices
+            reachable without draining them. Wake-up receivers (WuR) solve this by letting a device hibernate
+            until the network pages its unique address — but the address decoder itself burns power continuously.
+            This paper proposes a new decoder architecture that cuts that consumption to 60 nW, well below the
+            state-of-the-art, while maintaining reliable decoding. System-level analysis identifies the operating
+            regimes where WuR-based hibernation meaningfully extends battery life, making the case for its
+            integration into 5G/6G IoT infrastructure.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
