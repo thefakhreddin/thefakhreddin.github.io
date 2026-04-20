@@ -162,20 +162,25 @@ nav {
   width: 100%;
   height: 160px;
   background: var(--surface);
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  font-family: 'IBM Plex Mono', monospace;
-  color: var(--border);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
 }
-.card-thumb::after { content: '[ no image ]'; }
-.card-thumb:has(img[src]:not([src=""])) { background: transparent; }
-.card-thumb:has(img[src]:not([src=""]))::after { display: none; }
-.card-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.card-thumb img:not([src]), .card-thumb img[src=""] { display: none; }
+.card-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumb-placeholder {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--border);
+}
 .card-body {
   padding: 14px 16px 16px;
   flex: 1;
@@ -245,7 +250,7 @@ nav {
 .contact-section p { font-size: 13px; color: var(--muted); margin-bottom: 2rem; }
 .contact-links { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* ── PROJECT GROUP LABEL ──────────────────────────────── */
+/* ── PROJECT GROUP LABELS ─────────────────────────────── */
 .project-group-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10px;
@@ -255,6 +260,21 @@ nav {
   padding: 0 0 1rem 0;
   margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--border);
+}
+.grid-group-label {
+  grid-column: 1 / -1;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.5rem 16px 0.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.grid-group-label:first-child {
+  border-top: none;
+  padding-top: 0.75rem;
 }
 
 /* ── SOURCE BADGES ────────────────────────────────────── */
@@ -270,6 +290,7 @@ nav {
 .badge-personal      { background: var(--ink); }
 .badge-youtube       { background: #cc0000; }
 .badge-hackster      { background: #2e7d57; }
+.badge-github        { background: #24292e; }
 
 /* ── FOOTER ───────────────────────────────────────────── */
 footer {

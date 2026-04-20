@@ -2,11 +2,13 @@
 //  PROJECT DATA
 //  To add a project: copy one object below and fill in the fields.
 //
+//  group    : section heading shown above a run of cards (set only on the first
+//             card of each new group; omit on the rest)
 //  type     : "mechanical" | "software" | "video" | "electronics"
 //  category : display label shown on the card
-//  source   : "instructables" | "personal" | "youtube" | "hackster"
+//  source   : "instructables" | "personal" | "youtube" | "hackster" | "github"
 //  url      : link the card opens — use "" for personal projects with no link
-//  img      : thumbnail URL — right-click cover image → Copy image address
+//  img      : thumbnail URL
 // ─────────────────────────────────────────────────────────────────────────────
 
 const PROJECTS = [
@@ -14,6 +16,7 @@ const PROJECTS = [
   // ── Mechanical / LEGO Design ─────────────────────────────────────────────
 
   {
+    group:    "mechanical / lego design",
     type:     "mechanical",
     category: "mechanical · lego design",
     title:    "DIY Quadruped Robot",
@@ -149,14 +152,55 @@ const PROJECTS = [
     img:      "https://content.instructables.com/FW1/U5ON/LE8JKHMV/FW1U5ONLE8JKHMV.jpg"
   },
 
+  // ── Software / Open Source ────────────────────────────────────────────────
+
+  {
+    group:    "software / open source",
+    type:     "software",
+    category: "software · deep learning · ros",
+    title:    "LPM-Net: Deep MPC Local Planner",
+    desc:     "Predictive deep learning model for ROS robot navigation. 50% less compute than classic MPC. Published in a journal and packaged for ROS.",
+    source:   "github",
+    url:      "https://github.com/thefakhreddin/deep_mpc_local_planner",
+    img:      ""
+  },
+  {
+    type:     "software",
+    category: "software · computer vision · robotics",
+    title:    "2-DOF Object Tracking Arm",
+    desc:     "Robot arm that locks a webcam onto a moving target using TFLite + MobileNet CNN on Raspberry Pi.",
+    source:   "github",
+    url:      "https://github.com/thefakhreddin/TFLite_CNN_2DOF_Object_Tracking_Arm",
+    img:      ""
+  },
+  {
+    type:     "software",
+    category: "software · ros · firmware",
+    title:    "3-Wheel Omni Robot (ROS)",
+    desc:     "Omni-directional 3-wheeled mobile robot with real-time ROS control and an onboard SoC workspace.",
+    source:   "github",
+    url:      "https://github.com/thefakhreddin/3omni_wheel_robot_rtos",
+    img:      ""
+  },
+  {
+    type:     "software",
+    category: "electronics · firmware",
+    title:    "Orange Tart STM32 Firmware",
+    desc:     "Embedded C firmware for the Orange Tart soccer robot's STM32 microcontroller.",
+    source:   "github",
+    url:      "https://github.com/thefakhreddin/OrangeTart_Firmware_stm32",
+    img:      ""
+  },
+
   // ── Add more projects below ───────────────────────────────────────────────
   //
   // {
+  //   group:    "your section title",   // omit if continuing same section
   //   type:     "electronics",          // mechanical | software | video | electronics
   //   category: "electronics · pcb",
   //   title:    "Your Project Title",
   //   desc:     "One or two sentences about what you built and what it does.",
-  //   source:   "personal",             // instructables | personal | youtube | hackster
+  //   source:   "personal",             // instructables | personal | youtube | hackster | github
   //   url:      "",                     // leave "" for no link
   //   img:      ""                      // paste image URL here
   // },
