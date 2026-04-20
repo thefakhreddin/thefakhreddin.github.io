@@ -437,15 +437,15 @@ nav {
   border: 1px solid var(--border);
 }
 .gallery-item {
-  background: var(--bg);
+  background: var(--surface);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  height: 240px;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }
