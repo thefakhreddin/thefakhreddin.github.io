@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fakhreddin (Amir) Amirhosseini</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://content.instructables.com" />
+  <link rel="dns-prefetch" href="https://media.licdn.com" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,12 +15,12 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</span>
+  <a href="index.html" class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</a>
   <ul class="nav-links">
-    <li><a href="#projects">projects</a></li>
+    <li><a href="projects.html">projects</a></li>
     <li><a href="#awards">awards</a></li>
     <li><a href="#research">research</a></li>
-    <li><a href="#album">album</a></li>
+    <li><a href="album.html">album</a></li>
     <li><a href="#about">about</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
@@ -45,18 +48,17 @@
       </div>
       <div class="hero-actions">
         <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
-        <a href="#projects" class="btn">projects →</a>
+        <a href="projects.html" class="btn">projects →</a>
       </div>
     </div>
     <div class="hero-photo">
-      <!-- Save your photo to assets/img/profile.jpg -->
-      <img src="https://media.licdn.com/dms/image/v2/D5603AQHvY1LzVlFGwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727039069344?e=1778112000&v=beta&t=qQxTpUNDAvxW9-kDM5a5nvkozyhIgSCUtImGvm4Mw4M" alt="Fakhreddin (Amir) Amirhosseini" onerror="this.parentElement.classList.add('no-photo')" />
+      <img src="https://media.licdn.com/dms/image/v2/D5603AQHvY1LzVlFGwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727039069344?e=1778112000&v=beta&t=qQxTpUNDAvxW9-kDM5a5nvkozyhIgSCUtImGvm4Mw4M" alt="Fakhreddin (Amir) Amirhosseini" fetchpriority="high" onerror="this.parentElement.classList.add('no-photo')" />
       <span class="photo-placeholder">[ photo ]</span>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS TEASER -->
 <section class="projects-section" id="projects">
   <div class="section-inner">
     <div class="section-head">
@@ -64,16 +66,9 @@
         <p class="section-kicker">work</p>
         <h2>Projects</h2>
       </div>
-      <div class="filter-row">
-        <button class="filter-btn active" data-filter="all">all</button>
-        <button class="filter-btn" data-filter="mechanical">mechanical</button>
-        <button class="filter-btn" data-filter="software">software</button>
-        <button class="filter-btn" data-filter="video">video</button>
-        <button class="filter-btn" data-filter="electronics">electronics</button>
-      </div>
+      <a href="projects.html" class="btn">view all →</a>
     </div>
 
-    <!-- Featured: Tower Crane -->
     <a class="featured-banner" href="https://www.instructables.com/A-Fully-Functional-Tower-Crane-Desktop-Replica-Wit/" target="_blank" rel="noopener">
       <img src="https://content.instructables.com/FIH/XUJQ/KHG9T9KW/FIHXUJQKHG9T9KW.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="Tower Crane Desktop Replica" />
       <div class="featured-overlay">
@@ -85,7 +80,52 @@
 
     <p class="lego-note">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</p>
 
-    <div class="grid" id="project-grid"></div>
+    <div class="grid">
+      <a class="card" data-type="mechanical" href="https://www.instructables.com/A-DIY-Quadruped-Robot-With-Arduino-3D-Printed-and-/" target="_blank" rel="noopener">
+        <div class="card-thumb">
+          <img src="https://content.instructables.com/FBV/ETPD/KJVFNXZ0/FBVETPDKJVFNXZ0.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="DIY Quadruped Robot" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-type">mechanical · lego design</p>
+          <p class="card-title">DIY Quadruped Robot</p>
+          <p class="card-desc">4-legged walking robot built with Arduino, 3D printed parts, and LEGO-compatible components.</p>
+          <div class="card-footer">
+            <span class="badge-source badge-instructables">instructables ↗</span>
+            <span class="card-link">open →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" data-type="software" href="https://github.com/thefakhreddin/deep_mpc_local_planner" target="_blank" rel="noopener">
+        <div class="card-thumb">
+          <span class="thumb-placeholder">[ no image ]</span>
+        </div>
+        <div class="card-body">
+          <p class="card-type">software · deep learning · ros</p>
+          <p class="card-title">LPM-Net: Deep MPC Local Planner</p>
+          <p class="card-desc">Predictive deep learning model for ROS robot navigation. 50% less compute than classic MPC. Published in a journal and packaged for ROS.</p>
+          <div class="card-footer">
+            <span class="badge-source badge-github">github ↗</span>
+            <span class="card-link">open →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" data-type="mechanical" href="https://www.instructables.com/Cherry-Tart-the-Interactive-LEGO-compatible-Crafti/" target="_blank" rel="noopener">
+        <div class="card-thumb">
+          <img src="https://content.instructables.com/FW1/U5ON/LE8JKHMV/FW1U5ONLE8JKHMV.jpg" alt="Cherry Tart Robot Kit" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-type">mechanical · lego design</p>
+          <p class="card-title">Cherry Tart Robot Kit</p>
+          <p class="card-desc">Interactive, nature-inspired LEGO-compatible robot kit designed for kids and adults to build and innovate.</p>
+          <div class="card-footer">
+            <span class="badge-source badge-instructables">instructables ↗</span>
+            <span class="card-link">open →</span>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -206,298 +246,41 @@
   </div>
 </section>
 
-<!-- ALBUM -->
+<!-- ALBUM TEASER -->
 <section class="album-section" id="album">
   <div class="section-inner">
-    <p class="section-kicker">miscellaneous</p>
-    <h2>Album</h2>
-    <p class="album-intro">
-      A random walk through things I've built — robots, sensors, PCBs, drones, lab experiments,
-      and the occasional late-night sketch. No particular order, no particular theme.
-      Everything here was made by me. If something catches your eye,
-      <a href="mailto:fakhredin0098@gmail.com">reach out by email</a> or
-      <a href="https://linkedin.com/in/faamir/" target="_blank" rel="noopener">find me on LinkedIn</a>.
-    </p>
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">miscellaneous</p>
+        <h2>Album</h2>
+      </div>
+      <a href="album.html" class="btn">full album →</a>
+    </div>
     <div class="album-grid">
-
       <div class="album-item">
         <img src="assets/other/photo_2025-08-11_20-09-08.jpg" alt="At Tart Robotics" loading="lazy" />
         <p class="album-caption">At Tart Robotics — holding one of the robots I designed and shipped</p>
       </div>
-
       <div class="album-item">
         <img src="assets/other/photo_2026-04-19_17-39-02.jpg" alt="Tower crane" loading="lazy" />
         <p class="album-caption">Tower crane replica in full height — LEGO bricks, real mechanical engineering</p>
       </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-11_20-14-03.jpg" alt="Building the tower crane" loading="lazy" />
-        <p class="album-caption">Mid-build — assembling the tower crane, one brick at a time</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2020-11-06_09-13-36.jpg" alt="Tower crane internals" loading="lazy" />
-        <p class="album-caption">Crane internals — Arduino, servos, and wiring behind the LEGO facade</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/Crane_Project.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">Tower crane in action — lift, slew, and trolley all working</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2026-04-19_17-41-34.jpg" alt="Orange Tart soccer robot" loading="lazy" />
-        <p class="album-caption">Orange Tart soccer robot — gripper mechanism prototype</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2026-04-19_17-41-40.jpg" alt="Orange Tart from another angle" loading="lazy" />
-        <p class="album-caption">Orange Tart from the other side — mechatronic soccer robot</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-11_20-24-06.jpg" alt="3-wheel omni robot" loading="lazy" />
-        <p class="album-caption">3-wheel omni robot with integrated sonar — ROS-controlled</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-11_19-57-38.jpg" alt="DIY quadcopter" loading="lazy" />
-        <p class="album-caption">DIY Arduino quadcopter — early drone experiments</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-09-15_20-36-05.jpg" alt="Soldering session" loading="lazy" />
-        <p class="album-caption">Late-night soldering session at the electronics bench</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-11_20-05-36.jpg" alt="Oscilloscope debugging" loading="lazy" />
-        <p class="album-caption">Oscilloscope debugging — embedded systems work in the lab</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-09-16_13-27-52.jpg" alt="Tart controller board" loading="lazy" />
-        <p class="album-caption">Mulberry (Tart) controller board with a sonar sensor attached</p>
-      </div>
-
       <div class="album-item">
         <img src="assets/other/photo_2025-09-15_20-41-23.jpg" alt="Kardium PCB array" loading="lazy" />
         <p class="album-caption">PCB array with LED indicators — from the Kardium automation lab</p>
       </div>
-
       <div class="album-item">
-        <img src="assets/other/photo_2025-07-30_20-33-25.jpg" alt="Multi-sonar PCB" loading="lazy" />
-        <p class="album-caption">Multi-sonar array PCB — inductive sensor research prototype</p>
+        <img src="assets/other/photo_2025-08-11_19-57-38.jpg" alt="DIY quadcopter" loading="lazy" />
+        <p class="album-caption">DIY Arduino quadcopter — early drone experiments</p>
       </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-07-28_21-58-16.jpg" alt="Aluminate sensor lab" loading="lazy" />
-        <p class="album-caption">Aluminate sensor field test — bucket setup with a network analyzer</p>
-      </div>
-
       <div class="album-item">
         <img src="assets/other/photo_2026-04-19_17-42-11.jpg" alt="High-temp furnace test" loading="lazy" />
         <p class="album-caption">Sensor testing inside a Pyradia high-temperature furnace — Aluminate research</p>
       </div>
-
       <div class="album-item">
-        <img src="assets/other/photo_2026-04-19_17-42-42.jpg" alt="Microfluidic chips" loading="lazy" />
-        <p class="album-caption">PDMS microfluidic lab-on-chip — B.Sc. thesis work</p>
+        <img src="assets/other/photo_2025-09-15_20-36-05.jpg" alt="Soldering session" loading="lazy" />
+        <p class="album-caption">Late-night soldering session at the electronics bench</p>
       </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2026-04-19_17-42-47.jpg" alt="Microfluidic chips close-up" loading="lazy" />
-        <p class="album-caption">Another batch of microfluidic chips under fabrication</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2021-12-07_11-09-15.jpg" alt="Tangible coding blocks" loading="lazy" />
-        <p class="album-caption">Computer vision detecting tangible coding blocks in real time</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2021-12-07_11-09-54.jpg" alt="Block detection with bounding boxes" loading="lazy" />
-        <p class="album-caption">Bounding boxes overlaid — custom CV pipeline for tangible coding robot</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-12_01-08-39.jpg" alt="Mechanical sketches" loading="lazy" />
-        <p class="album-caption">Sketching a crab-walk leg mechanism — 1 AM ideas</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-12_01-08-41.jpg" alt="Rover design sketches" loading="lazy" />
-        <p class="album-caption">Rover locomotion schemes — exploring different leg configurations</p>
-      </div>
-
-      <div class="album-item">
-        <img src="assets/other/photo_2025-08-12_01-08-42.jpg" alt="4-leg mechanism sketches" loading="lazy" />
-        <p class="album-caption">Leg mechanism concepts for a 4-legged walking robot</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-38-30.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-38-56.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-46-58.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-48-08.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-48-56.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-49-16.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-49-36.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-49-44.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-50-07.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-50-17.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_17-50-30.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_18-01-02.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_18-01-33.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/video_2026-04-19_18-03-46.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_0571.mov" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_2111.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_2257.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_4206.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_5634.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_5635.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_7382.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/IMG_7789.MOV" type="video/mp4">
-        </video>
-        <p class="album-caption">// clip</p>
-      </div>
-
-      <div class="album-item album-item--video">
-        <video controls preload="metadata">
-          <source src="assets/other/Screen Recording 2025-09-16 at 12.07.11 PM.mp4" type="video/mp4">
-        </video>
-        <p class="album-caption">Screen recording — lab software, Sep 2025</p>
-      </div>
-
     </div>
   </div>
 </section>
@@ -563,8 +346,7 @@
   <span>github pages</span>
 </footer>
 
-<script src="js/projects.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>

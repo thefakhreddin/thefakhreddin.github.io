@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Fakhreddin (Amir) Amirhosseini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://content.instructables.com" />
+  <link rel="dns-prefetch" href="https://private-user-images.githubusercontent.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</a>
+  <ul class="nav-links">
+    <li><a href="projects.html" class="nav-current">projects</a></li>
+    <li><a href="index.html#awards">awards</a></li>
+    <li><a href="index.html#research">research</a></li>
+    <li><a href="album.html">album</a></li>
+    <li><a href="index.html#about">about</a></li>
+    <li><a href="index.html#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">work</p>
+        <h2>Projects</h2>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="mechanical">mechanical</button>
+        <button class="filter-btn" data-filter="software">software</button>
+        <button class="filter-btn" data-filter="electronics">electronics</button>
+      </div>
+    </div>
+
+    <a class="featured-banner" href="https://www.instructables.com/A-Fully-Functional-Tower-Crane-Desktop-Replica-Wit/" target="_blank" rel="noopener">
+      <img src="https://content.instructables.com/FIH/XUJQ/KHG9T9KW/FIHXUJQKHG9T9KW.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="Tower Crane Desktop Replica" fetchpriority="high" />
+      <div class="featured-overlay">
+        <span class="featured-tag">// featured · mechanical design</span>
+        <h3>Tower Crane Desktop Replica</h3>
+        <p>Fully functional desktop-scale tower crane with working lift, slew, and trolley. Arduino-controlled, 3D printed, and LEGO-compatible.</p>
+      </div>
+    </a>
+
+    <p class="lego-note">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</p>
+
+    <div class="grid" id="project-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© <span id="year"></span> Fakhreddin (Amir) Amirhosseini</span>
+  <span>github pages</span>
+</footer>
+
+<script src="js/projects.js" defer></script>
+<script src="js/main.js" defer></script>
+
+</body>
+</html>

@@ -57,10 +57,31 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       card.dataset.hidden = (f === 'all' || card.dataset.type === f) ? 'false' : 'true';
     });
 
-    // hide group labels when all their cards are hidden
     document.querySelectorAll('.grid-group-label').forEach(label => {
       const group = label.dataset.filterGroup;
       label.style.display = (f === 'all' || f === group) ? '' : 'none';
     });
   });
 });
+
+// ── Lazy video loading (album.html) ──────────────────────────────────────────
+(function lazyVideos() {
+  const videos = document.querySelectorAll('video[data-lazy]');
+  if (!videos.length) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const video = entry.target;
+      video.querySelectorAll('source[data-src]').forEach(s => {
+        s.src = s.dataset.src;
+        delete s.dataset.src;
+      });
+      video.load();
+      video.removeAttribute('data-lazy');
+      obs.unobserve(video);
+    });
+  }, { rootMargin: '400px' });
+
+  videos.forEach(v => obs.observe(v));
+})();
