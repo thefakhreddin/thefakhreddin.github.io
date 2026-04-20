@@ -25,80 +25,95 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <p class="hero-tag">// mechatronic systems engineer</p>
-    <h1>I build things.<br>Hardware. Software.<br>Whatever it takes.</h1>
-    <p class="hero-bio">
-      Mechatronics engineer with nearly a decade of experience building
-      production-grade hardware and software — from medical device automation
-      to award-winning sensors and STEM robotics platforms.
-      Based in Vancouver, BC.
-    </p>
-    <div class="hero-pills">
-      <span class="pill">mechatronics</span>
-      <span class="pill">hardware</span>
-      <span class="pill">software</span>
-      <span class="pill">pcb design</span>
-      <span class="pill">robotics</span>
-      <span class="pill">sensors</span>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-tag">// mechatronic systems engineer</p>
+      <h1>I build things.<br>Hardware. Software.<br>Whatever it takes.</h1>
+      <p class="hero-bio">
+        Mechatronics engineer with nearly a decade of experience building
+        production-grade hardware and software — from medical device automation
+        to award-winning sensors and STEM robotics platforms.
+        Based in Vancouver, BC.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">mechatronics</span>
+        <span class="pill">hardware</span>
+        <span class="pill">software</span>
+        <span class="pill">pcb design</span>
+        <span class="pill">robotics</span>
+        <span class="pill">sensors</span>
+      </div>
+      <div class="hero-actions">
+        <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
+        <a href="#projects" class="btn">projects →</a>
+      </div>
     </div>
-    <div class="hero-actions">
-      <a href="resume.pdf" download class="btn btn-primary">resume.pdf</a>
-      <a href="#projects" class="btn">projects →</a>
+    <div class="hero-photo">
+      <!-- Save your photo to assets/img/profile.jpg -->
+      <img src="assets/img/profile.jpg" alt="Fakhreddin (Amir) Amirhosseini" onerror="this.parentElement.classList.add('no-photo')" />
+      <span class="photo-placeholder">[ photo ]</span>
     </div>
-  </div>
-  <div class="hero-photo">
-    <!-- Save your LinkedIn photo to assets/img/profile.jpg and it will appear here -->
-    <img src="assets/img/profile.jpg" alt="Fakhreddin (Amir) Amirhosseini" onerror="this.parentElement.classList.add('no-photo')" />
-    <span class="photo-placeholder">[ photo ]</span>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section class="projects-section" id="projects">
-  <div class="section-head">
-    <span class="section-label">projects</span>
-    <div class="filter-row">
-      <button class="filter-btn active" data-filter="all">all</button>
-      <button class="filter-btn" data-filter="mechanical">mechanical</button>
-      <button class="filter-btn" data-filter="software">software</button>
-      <button class="filter-btn" data-filter="video">video</button>
-      <button class="filter-btn" data-filter="electronics">electronics</button>
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">work</p>
+        <h2>Projects</h2>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="mechanical">mechanical</button>
+        <button class="filter-btn" data-filter="software">software</button>
+        <button class="filter-btn" data-filter="video">video</button>
+        <button class="filter-btn" data-filter="electronics">electronics</button>
+      </div>
     </div>
+
+    <!-- Featured: Tower Crane -->
+    <a class="featured-banner" href="https://www.instructables.com/A-Fully-Functional-Tower-Crane-Desktop-Replica-Wit/" target="_blank" rel="noopener">
+      <img src="https://content.instructables.com/FIH/XUJQ/KHG9T9KW/FIHXUJQKHG9T9KW.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="Tower Crane Desktop Replica" />
+      <div class="featured-overlay">
+        <span class="featured-tag">// featured · mechanical design</span>
+        <h3>Tower Crane Desktop Replica</h3>
+        <p>Fully functional desktop-scale tower crane with working lift, slew, and trolley. Arduino-controlled, 3D printed, and LEGO-compatible.</p>
+      </div>
+    </a>
+
+    <p class="lego-note">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</p>
+
+    <div class="grid" id="project-grid"></div>
   </div>
-
-  <!-- Featured: Tower Crane -->
-  <a class="featured-banner" href="https://www.instructables.com/A-Fully-Functional-Tower-Crane-Desktop-Replica-Wit/" target="_blank" rel="noopener">
-    <img src="https://content.instructables.com/FIH/XUJQ/KHG9T9KW/FIHXUJQKHG9T9KW.jpg?frame=true&width=1024&height=1024&fit=bounds" alt="Tower Crane Desktop Replica" />
-    <div class="featured-overlay">
-      <span class="featured-tag">// featured · mechanical design</span>
-      <h3>Tower Crane Desktop Replica</h3>
-      <p>Fully functional desktop-scale tower crane with working lift, slew, and trolley. Arduino-controlled, 3D printed, and LEGO-compatible.</p>
-    </div>
-  </a>
-
-  <p class="lego-note">// Don't let the colourful bricks fool you — there's real mechanical engineering beneath the surface.</p>
-
-  <!-- Cards and group headers injected by js/projects.js + js/main.js -->
-  <div class="grid" id="project-grid"></div>
 </section>
 
 <!-- AWARDS -->
 <section class="awards-section" id="awards">
-  <div class="awards-inner">
-    <span class="section-label">awards &amp; recognitions</span>
+  <div class="section-inner">
+    <p class="section-kicker">recognition</p>
+    <h2>Awards &amp; Recognitions</h2>
     <ul class="awards-list">
       <li>
         <span class="award-year">Jan 2026</span>
-        <span class="award-title">Nominated for the Governor General's Academic Medal</span>
+        <span class="award-title">
+          Nominated for the Governor General's Academic Medal
+        </span>
       </li>
       <li>
         <span class="award-year">Oct 2025</span>
-        <span class="award-title">Outstanding Lecture Award — IEEE Sensors Conference <span class="award-note">among 400+ accepted works</span></span>
+        <span class="award-title">
+          Outstanding Lecture Award — IEEE Sensors Conference
+          <span class="award-note">among 400+ accepted works</span>
+        </span>
       </li>
       <li>
         <span class="award-year">2023–25</span>
-        <span class="award-title">Graduate Fellowship Recipient <span class="award-note">3×</span></span>
+        <span class="award-title">
+          Graduate Fellowship Recipient
+          <span class="award-note">3×</span>
+        </span>
       </li>
       <li>
         <span class="award-year">2016–26</span>
@@ -106,7 +121,10 @@
       </li>
       <li>
         <span class="award-year">2017–23</span>
-        <span class="award-title">Featured on Hackster.io &amp; Instructables.com <span class="award-note">multiple times</span></span>
+        <span class="award-title">
+          Featured on Hackster.io &amp; Instructables.com
+          <span class="award-note">multiple times</span>
+        </span>
       </li>
     </ul>
   </div>
@@ -114,77 +132,83 @@
 
 <!-- RESEARCH -->
 <section class="papers-section" id="research">
-  <div class="papers-inner">
-    <span class="section-label">research &amp; publications</span>
+  <div class="section-inner">
+    <p class="section-kicker">publications</p>
+    <h2>Research &amp; Publications</h2>
     <div id="papers-list">
-      <!-- Papers are added here. Upload PDFs to assets/papers/ and ask me to read and describe them. -->
-      <p class="papers-empty">Papers coming soon — upload PDFs to <code>assets/papers/</code></p>
+      <p class="papers-empty">Upload PDFs to <code>assets/papers/</code> and I'll write them up here.</p>
     </div>
   </div>
 </section>
 
 <!-- OTHER -->
 <section class="other-section" id="other">
-  <div class="other-inner">
-    <span class="section-label">other</span>
+  <div class="section-inner">
+    <p class="section-kicker">miscellaneous</p>
+    <h2>Other</h2>
     <p class="other-intro">
       Here are some more random things I find interesting but couldn't find a neat place for elsewhere.
       Think of this as a random walk through my past experiences — a little bit of every project and every rabbit hole.
       And yes, everything you'll stumble upon in this page was built by me.
     </p>
     <div class="other-grid" id="other-grid">
-      <!-- Add images/videos to assets/other/ and ask me to build this section out -->
-      <p class="other-empty">More coming — drop files in <code>assets/other/</code></p>
+      <p class="other-empty">Drop files in <code>assets/other/</code> and I'll build this out.</p>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
-  <div class="about-inner">
-    <div>
-      <h2>About</h2>
-      <p>
-        Mechatronics engineer working at the intersection of mechanical design,
-        electronics, and software. I've taken products from concept to market —
-        3,000+ STEM robots shipped globally — and published research in IEEE
-        journals and a provisional US patent.
-      </p>
-      <p>
-        Currently an Automation Engineer at Kardium, building software and
-        hardware for medical device manufacturing. M.A.Sc. in Mechatronic
-        Systems Engineering from Simon Fraser University.
-      </p>
-      <p>Open to freelance, research collaboration, and interesting problems.</p>
-      <br />
-      <a href="resume.pdf" download class="btn btn-primary">resume.pdf ↓</a>
-    </div>
-    <div>
-      <p class="section-label" style="margin-bottom:1rem;">tools &amp; skills</p>
-      <ul class="skills-list">
-        <li>C#, C/C++, Python, JavaScript</li>
-        <li>SolidWorks &amp; Altium Designer</li>
-        <li>PCB design — HF / HV applications</li>
-        <li>Deep Learning, TensorFlow, Machine Vision</li>
-        <li>COMSOL RF &amp; AC/DC simulation</li>
-        <li>ROS, Robot Manipulation, Motion Planning</li>
-        <li>Sensors — IMU, Inductive, Capacitive, Sonar</li>
-        <li>Git, SOLID principles, unit testing</li>
-        <li>Arduino / Raspberry Pi / ESP32</li>
-      </ul>
+  <div class="section-inner">
+    <p class="section-kicker">background</p>
+    <h2>About</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          Mechatronics engineer working at the intersection of mechanical design,
+          electronics, and software. I've taken products from concept to market —
+          3,000+ STEM robots shipped globally — and published research in IEEE
+          journals and a provisional US patent.
+        </p>
+        <p>
+          Currently an Automation Engineer at Kardium, building software and
+          hardware for medical device manufacturing. M.A.Sc. in Mechatronic
+          Systems Engineering from Simon Fraser University.
+        </p>
+        <p>Open to freelance, research collaboration, and interesting problems.</p>
+        <br />
+        <a href="resume.pdf" download class="btn btn-primary">resume.pdf ↓</a>
+      </div>
+      <div>
+        <p class="section-kicker" style="margin-bottom:1rem;">tools &amp; skills</p>
+        <ul class="skills-list">
+          <li>C#, C/C++, Python, JavaScript</li>
+          <li>SolidWorks &amp; Altium Designer</li>
+          <li>PCB design — HF / HV applications</li>
+          <li>Deep Learning, TensorFlow, Machine Vision</li>
+          <li>COMSOL RF &amp; AC/DC simulation</li>
+          <li>ROS, Robot Manipulation, Motion Planning</li>
+          <li>Sensors — IMU, Inductive, Capacitive, Sonar</li>
+          <li>Git, SOLID principles, unit testing</li>
+          <li>Arduino / Raspberry Pi / ESP32</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
-  <h2>Contact</h2>
-  <p>Project inquiries, research collaboration, or just to say hi.</p>
-  <div class="contact-links">
-    <a href="mailto:fakhredin0098@gmail.com" class="btn">email</a>
-    <a href="https://linkedin.com/in/faamir/" class="btn" target="_blank" rel="noopener">linkedin</a>
-    <a href="https://github.com/thefakhreddin" class="btn" target="_blank" rel="noopener">github</a>
-    <a href="https://www.instructables.com/member/Tart%20Robotics/" class="btn" target="_blank" rel="noopener">instructables</a>
+  <div class="section-inner">
+    <p class="section-kicker">get in touch</p>
+    <h2>Contact</h2>
+    <p>Project inquiries, research collaboration, or just to say hi.</p>
+    <div class="contact-links">
+      <a href="mailto:fakhredin0098@gmail.com" class="btn">email</a>
+      <a href="https://linkedin.com/in/faamir/" class="btn" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/thefakhreddin" class="btn" target="_blank" rel="noopener">github</a>
+      <a href="https://www.instructables.com/member/Tart%20Robotics/" class="btn" target="_blank" rel="noopener">instructables</a>
+    </div>
   </div>
 </section>
 
