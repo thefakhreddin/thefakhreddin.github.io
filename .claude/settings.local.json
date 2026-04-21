@@ -18,7 +18,8 @@
       "Bash(python -c \"import pypdf; print\\('ok'\\)\")",
       "Bash(python -c \"import fitz; print\\('ok'\\)\")",
       "Bash(pip install *)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Bash(git commit *)"
     ]
   }
 }
