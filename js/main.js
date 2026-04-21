@@ -67,7 +67,58 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// ── Lazy video loading (album.html) ──────────────────────────────────────────
+// ── Gallery lightbox ─────────────────────────────────────────────────────────
+(function lightbox() {
+  const imgs = Array.from(document.querySelectorAll('.gallery-item img'));
+  if (!imgs.length) return;
+
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lb-img');
+  const counter = document.getElementById('lb-counter');
+  let current   = 0;
+
+  function show(index) {
+    current = (index + imgs.length) % imgs.length;
+    lbImg.src = imgs[current].src;
+    lbImg.alt = imgs[current].alt;
+    counter.textContent = `${current + 1} / ${imgs.length}`;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach((img, i) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => show(i));
+  });
+
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
+
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+
+  let touchX = 0;
+  lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) dx < 0 ? show(current + 1) : show(current - 1);
+  });
+})();
+
+// ── Lazy video loading (gallery.html) ────────────────────────────────────────
 (function lazyVideos() {
   const videos = document.querySelectorAll('video[data-lazy]');
   if (!videos.length) return;

@@ -466,6 +466,55 @@ nav {
   background: var(--ink);
 }
 
+/* ── LIGHTBOX ─────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,0.93);
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+  object-fit: contain;
+  user-select: none;
+  display: block;
+}
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-family: 'IBM Plex Mono', monospace;
+  cursor: pointer;
+  padding: 16px;
+  transition: color 0.15s;
+  z-index: 501;
+  line-height: 1;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { color: #fff; }
+.lightbox-close { top: 1.25rem; right: 1.5rem; font-size: 16px; }
+.lightbox-prev  { left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 28px; }
+.lightbox-next  { right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 28px; }
+.lightbox-counter {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  pointer-events: none;
+}
+
 /* ── ABOUT ────────────────────────────────────────────── */
 .about-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .about-grid {
