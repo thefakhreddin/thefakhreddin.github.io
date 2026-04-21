@@ -218,6 +218,13 @@ nav {
   margin-bottom: 2rem;
   border: 1px solid var(--border);
 }
+.featured-banner--hero {
+  height: 480px;
+  margin-bottom: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
 .featured-banner img {
   width: 100%;
   height: 100%;
@@ -509,6 +516,7 @@ footer {
   .section-head { flex-direction: column; align-items: flex-start; }
 
   .featured-banner { height: 240px; }
+  .featured-banner--hero { height: 300px; }
   .featured-overlay { padding: 1.5rem; }
 
   .awards-list li { grid-template-columns: 70px 1fr; gap: 1rem; }
