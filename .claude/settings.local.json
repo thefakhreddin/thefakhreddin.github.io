@@ -12,7 +12,13 @@
       "WebFetch(domain:www.linkedin.com)",
       "Bash(curl *)",
       "WebFetch(domain:content.instructables.com)",
-      "Bash(python -c \"import sys,json; repos=[r for r in json.load\\(sys.stdin\\) if not r['fork']]; [print\\(r['name'],'|',r['description'],'|',r['html_url'],'|',r['language'],'|',r['stargazers_count'],'stars'\\) for r in repos]\")"
+      "Bash(python -c \"import sys,json; repos=[r for r in json.load\\(sys.stdin\\) if not r['fork']]; [print\\(r['name'],'|',r['description'],'|',r['html_url'],'|',r['language'],'|',r['stargazers_count'],'stars'\\) for r in repos]\")",
+      "Bash(git pull *)",
+      "Bash(python -c \"import pdfminer; print\\('ok'\\)\")",
+      "Bash(python -c \"import pypdf; print\\('ok'\\)\")",
+      "Bash(python -c \"import fitz; print\\('ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python *)"
     ]
   }
 }
