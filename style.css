@@ -484,6 +484,11 @@ nav {
   user-select: none;
   display: block;
 }
+.lightbox-video {
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+  display: block;
+}
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {
