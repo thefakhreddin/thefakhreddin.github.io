@@ -67,39 +67,98 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// ── Gallery lightbox ─────────────────────────────────────────────────────────
-(function lightbox() {
-  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-  if (!galleryItems.length) return;
+// ── Render gallery from GALLERY_ASSETS ───────────────────────────────────────
+(function renderGallery() {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid || typeof GALLERY_ASSETS === 'undefined') return;
 
-  // Build a unified media list: {type, src, alt}
-  const items = galleryItems.map(el => {
-    const img = el.querySelector('img');
-    if (img) return { type: 'image', src: img.src, alt: img.alt };
-    const video = el.querySelector('video');
-    if (video) {
-      const source = video.querySelector('source');
-      const src = source ? (source.src || source.dataset.src || '') : '';
-      return { type: 'video', src };
+  const IMG_EXTS = /\.(jpg|jpeg|png|gif|webp)$/i;
+  const VID_EXTS = /\.(mp4|mov|webm|m4v)$/i;
+  const MOV_EXTS = /\.mov$/i;
+
+  GALLERY_ASSETS.forEach(file => {
+    const path = `assets/other/${file}`;
+    const item = document.createElement('div');
+
+    if (IMG_EXTS.test(file)) {
+      item.className = 'gallery-item';
+      const img = document.createElement('img');
+      img.src = path;
+      img.loading = 'lazy';
+      item.appendChild(img);
+
+    } else if (VID_EXTS.test(file)) {
+      item.className = 'gallery-item gallery-item--video';
+      const video = document.createElement('video');
+      video.setAttribute('data-lazy', '');
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.setAttribute('playsinline', '');
+      video.preload = 'none';
+
+      // MOV files: try mp4 first (works if H.264), fall back to quicktime for Safari
+      if (MOV_EXTS.test(file)) {
+        const s1 = document.createElement('source');
+        s1.dataset.src = path;
+        s1.type = 'video/mp4';
+        video.appendChild(s1);
+        const s2 = document.createElement('source');
+        s2.dataset.src = path;
+        s2.type = 'video/quicktime';
+        video.appendChild(s2);
+      } else {
+        const source = document.createElement('source');
+        source.dataset.src = path;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+      }
+
+      item.appendChild(video);
     }
-    return null;
-  }).filter(Boolean);
 
-  const lb        = document.getElementById('lightbox');
-  const lbImg     = document.getElementById('lb-img');
-  const lbVideo   = document.getElementById('lb-video');
-  const lbVidSrc  = document.getElementById('lb-video-src');
-  const counter   = document.getElementById('lb-counter');
-  let current     = 0;
+    if (item.firstChild) grid.appendChild(item);
+  });
+})();
+
+// ── Gallery lightbox ──────────────────────────────────────────────────────────
+(function lightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+
+  const lbImg    = document.getElementById('lb-img');
+  const lbVideo  = document.getElementById('lb-video');
+  const lbVidSrc = document.getElementById('lb-video-src');
+  const counter  = document.getElementById('lb-counter');
+  let items      = [];
+  let current    = 0;
+
+  // Enforce mute — user cannot unmute the lightbox video
+  lbVideo.muted = true;
+  lbVideo.addEventListener('volumechange', () => { lbVideo.muted = true; });
+
+  function buildItems() {
+    items = Array.from(document.querySelectorAll('.gallery-item')).map(el => {
+      const img = el.querySelector('img');
+      if (img) return { type: 'image', src: img.src, alt: img.alt };
+      const video = el.querySelector('video');
+      if (video) {
+        const source = video.querySelector('source');
+        return { type: 'video', src: source ? (source.src || source.dataset.src || '') : '' };
+      }
+      return null;
+    }).filter(Boolean);
+  }
 
   function show(index) {
+    if (!items.length) buildItems();
     current = (index + items.length) % items.length;
     const item = items[current];
     counter.textContent = `${current + 1} / ${items.length}`;
 
     if (item.type === 'image') {
       lbImg.src = item.src;
-      lbImg.alt = item.alt;
+      lbImg.alt = item.alt || '';
       lbImg.style.display = '';
       lbVideo.style.display = 'none';
       lbVideo.pause();
@@ -107,6 +166,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       lbImg.style.display = 'none';
       lbImg.src = '';
       lbVidSrc.src = item.src;
+      lbVideo.muted = true;
       lbVideo.load();
       lbVideo.style.display = '';
     }
@@ -123,15 +183,18 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     document.body.style.overflow = '';
   }
 
-  galleryItems.forEach((el, i) => {
-    el.style.cursor = 'zoom-in';
-    el.addEventListener('click', () => show(i));
+  // Attach click — build items lazily after renderGallery() has run
+  document.getElementById('gallery-grid')?.addEventListener('click', e => {
+    const el = e.target.closest('.gallery-item');
+    if (!el) return;
+    buildItems();
+    const index = Array.from(document.querySelectorAll('.gallery-item')).indexOf(el);
+    show(index);
   });
 
   document.getElementById('lb-close').addEventListener('click', close);
   document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
   document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
-
   lb.addEventListener('click', e => { if (e.target === lb) close(); });
 
   document.addEventListener('keydown', e => {
@@ -149,24 +212,33 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 })();
 
-// ── Lazy video loading (gallery.html) ────────────────────────────────────────
+// ── Lazy video loading ────────────────────────────────────────────────────────
 (function lazyVideos() {
-  const videos = document.querySelectorAll('video[data-lazy]');
-  if (!videos.length) return;
+  const observe = () => {
+    const videos = document.querySelectorAll('video[data-lazy]');
+    if (!videos.length) return;
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const video = entry.target;
-      video.querySelectorAll('source[data-src]').forEach(s => {
-        s.src = s.dataset.src;
-        delete s.dataset.src;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const video = entry.target;
+        video.querySelectorAll('source[data-src]').forEach(s => {
+          s.src = s.dataset.src;
+          delete s.dataset.src;
+        });
+        video.load();
+        video.removeAttribute('data-lazy');
+        obs.unobserve(video);
       });
-      video.load();
-      video.removeAttribute('data-lazy');
-      obs.unobserve(video);
-    });
-  }, { rootMargin: '400px' });
+    }, { rootMargin: '400px' });
 
-  videos.forEach(v => obs.observe(v));
+    videos.forEach(v => obs.observe(v));
+  };
+
+  // Run after renderGallery() has populated the DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observe);
+  } else {
+    observe();
+  }
 })();
