@@ -458,14 +458,6 @@ nav {
   display: block;
   background: var(--ink);
 }
-.gallery-caption {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  color: var(--muted);
-  padding: 10px 14px 13px;
-  line-height: 1.5;
-  border-top: 1px solid var(--border);
-}
 
 /* ── ABOUT ────────────────────────────────────────────── */
 .about-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
