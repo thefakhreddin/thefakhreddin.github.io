@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aluminum Smelting Sensors — Fakhreddin (Amir) Amirhosseini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-hero {
+      padding: 4rem 2.5rem 3rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .project-hero .section-kicker { margin-bottom: 0.5rem; }
+    .project-hero h1 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .project-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .project-hero p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .project-hero h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 2.5rem 0 0.75rem;
+      color: var(--muted);
+    }
+    .project-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 2.5rem;
+      max-width: 760px;
+    }
+    .publications-section {
+      padding: 3rem 2.5rem 4rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .publications-section h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .pub-entry {
+      border-left: 2px solid var(--border);
+      padding-left: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .pub-entry p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .pub-entry .pub-venue {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .pub-entry .pub-award {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+    .papers-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+    }
+    .papers-link:hover { opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</a>
+  <ul class="nav-links">
+    <li><a href="index.html">home</a></li>
+    <li><a href="projects.html" class="nav-current">projects</a></li>
+    <li><a href="index.html#awards">awards</a></li>
+    <li><a href="index.html#research">research</a></li>
+    <li><a href="gallery.html">gallery</a></li>
+    <li><a href="index.html#about">about</a></li>
+    <li><a href="index.html#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- PROJECT DESCRIPTION -->
+<div class="project-hero">
+  <p class="section-kicker">research · sensors · electronics</p>
+  <h1>Aluminum Smelting Sensors</h1>
+  <div class="project-meta">
+    <span class="tag">inductive sensing</span>
+    <span class="tag">resonant capacitive</span>
+    <span class="tag">COMSOL</span>
+    <span class="tag">molten cryolite</span>
+    <span class="tag">IEEE published</span>
+  </div>
+
+  <h2>// the problem</h2>
+  <p>
+    Aluminum smelting cells are one of the harshest measurement environments on Earth. The electrolytic
+    reduction process runs at roughly 960 °C, submerged in molten cryolite — a highly corrosive fluoride
+    salt — while drawing tens of thousands of amperes of DC current. Inside each cell, a layer of molten
+    cryolite (the bath) sits above a pool of molten aluminum metal. Precise control of the bath thickness
+    and the aluminum fluoride (AlF₃) concentration in that bath are critical to process efficiency and
+    product quality.
+  </p>
+  <p>
+    Despite this, the industry's standard measurement method is still a technician manually inserting a
+    dipstick into the pot. Real-time, in-situ sensing has remained an open problem — every contact sensor
+    corrodes or fails quickly, and the intense electromagnetic environment rules out most non-contact
+    approaches. These two projects address that gap with two independently developed sensor principles.
+  </p>
+
+  <h2>// sensor 1 — inductive level measurement</h2>
+  <p>
+    The first sensor targets <em>where</em> the materials are: bath thickness and molten aluminum depth.
+    The approach uses eddy-current induction — a coil placed above the cell induces currents in the
+    conductive molten layers, and the resulting impedance change encodes depth information without any
+    contact with the melt.
+  </p>
+  <p>
+    Two configurations were developed: a single-inductor design that establishes the core measurement
+    principle, and a differential induction-balance configuration that significantly improves resolution
+    by cancelling common-mode interference. Both were validated analytically, through COMSOL
+    electromagnetic simulation, and in furnace experiments with real molten cryolite — demonstrating
+    clear discrimination between bath and metal layer depths.
+  </p>
+
+  <h2>// sensor 2 — resonant capacitive composition measurement</h2>
+  <p>
+    The second sensor targets <em>what</em> the bath is made of: specifically, AlF₃ concentration.
+    Fluoride concentration drifts during smelting and must be held in a tight window to control
+    liquidus temperature and bath conductivity — but measuring it in real time has been an unsolved
+    problem.
+  </p>
+  <p>
+    The solution is a ceramic-coated passive LC resonator probe that partially submerges in the bath.
+    As bath conductivity changes with AlF₃ concentration, the quality factor of the resonator detunes
+    in a predictable, measurable way. Reading out concentration becomes an impedance measurement —
+    robust, contact-tolerant through the ceramic coating, and validated across multiple AlF₃
+    concentrations in molten cryolite.
+  </p>
+  <p>
+    This work was presented at the IEEE Sensors Conference and awarded <strong>Outstanding Lecture</strong>
+    among over 400 accepted contributions.
+  </p>
+
+  <h2>// field validation</h2>
+  <p>
+    Both sensors were validated in furnace experiments using real molten cryolite — not synthetic
+    substitutes. The inductive sensor demonstrated repeatable depth discrimination across bath and metal
+    layers. The resonant capacitive sensor produced consistent impedance readings across varying AlF₃
+    concentrations. These results establish a concrete path toward closing the loop on continuous,
+    automated bath geometry and composition control in industrial smelting cells.
+  </p>
+</div>
+
+<hr class="project-divider" />
+
+<!-- PUBLICATIONS -->
+<div class="publications-section">
+  <h2>// publications</h2>
+
+  <div class="pub-entry">
+    <p>Inductive Sensors for Continuous Bath and Metal Level Measurement in Harsh Aluminum Smelting Environments</p>
+    <p class="pub-venue">IEEE Sensors Journal · 2025 · with A. Ali, J. Ziegler, J. Walmsley, B. Bahreyni</p>
+  </div>
+
+  <div class="pub-entry">
+    <p>Real-Time Monitoring of Molten Cryolite Composition Using a Resonant Capacitive Sensor</p>
+    <p class="pub-venue">IEEE Sensors Conference · Oct 2025 · with A. Ali, B. Bahreyni</p>
+    <span class="pub-award">// outstanding lecture award</span>
+  </div>
+
+  <a class="papers-link" href="index.html#research">view full abstracts on the research page →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© <span id="year"></span> Fakhreddin (Amir) Amirhosseini</span>
+  <span>github pages</span>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

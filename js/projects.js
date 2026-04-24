@@ -26,6 +26,19 @@ const PROJECTS = [
     img:      "projects/Christopher/tr3.jpg"
   },
 
+  // ── Research / Sensors ───────────────────────────────────────────────────
+
+  {
+    group:    "research / sensors",
+    type:     "electronics",
+    category: "electronics · sensors · research",
+    title:    "Aluminum Smelting Sensors",
+    desc:     "Non-contact inductive and resonant capacitive sensors for real-time bath level and composition measurement inside molten aluminum smelting cells. Two IEEE publications.",
+    source:   "personal",
+    url:      "aluminum-smelting.html",
+    img:      ""
+  },
+
   // ── LEGO Mechanical ──────────────────────────────────────────────────────
 
   {
