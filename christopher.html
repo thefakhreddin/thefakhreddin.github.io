@@ -169,7 +169,7 @@
     const MOV_EXTS = /\.mov$/i;
 
     CHRISTOPHER_ASSETS.forEach(file => {
-      const path = BASE + file;
+      const path = BASE + encodeURIComponent(file);
       const item = document.createElement('div');
 
       if (IMG_EXTS.test(file)) {

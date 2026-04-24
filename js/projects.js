@@ -23,7 +23,7 @@ const PROJECTS = [
     desc:     "Ceiling-mounted skeleton that drops over unsuspecting victims on PIR trigger, then retracts to ambush again — entire cycle driven by a single DC motor with a clever release mechanism. No servos. Electronics fit on a cheap motor driver and a JK flip-flop.",
     source:   "personal",
     url:      "christopher.html",
-    img:      "projects/Christopher/tn2.jpg"
+    img:      "projects/Christopher/tr3.jpg"
   },
 
   // ── LEGO Mechanical ──────────────────────────────────────────────────────
