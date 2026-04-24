@@ -16,7 +16,6 @@ const PROJECTS = [
   // ── Original Builds ──────────────────────────────────────────────────────
 
   {
-    group:    "original builds",
     type:     "mechanical",
     category: "mechanical · electronics",
     title:    "Meet Christopher",
@@ -29,20 +28,18 @@ const PROJECTS = [
   // ── Research / Sensors ───────────────────────────────────────────────────
 
   {
-    group:    "research / sensors",
     type:     "electronics",
     category: "electronics · sensors · research",
     title:    "Aluminum Smelting Sensors",
     desc:     "Non-contact inductive and resonant capacitive sensors for real-time bath level and composition measurement inside molten aluminum smelting cells. Two IEEE publications.",
     source:   "personal",
     url:      "aluminum-smelting.html",
-    img:      ""
+    img:      "projects/Aluminum%20Smelting%20Sensor/tn3.jpg"
   },
 
   // ── LEGO Mechanical ──────────────────────────────────────────────────────
 
   {
-    group:    "lego mechanical",
     type:     "mechanical",
     category: "mechanical · lego design",
     title:    "DIY Quadruped Robot",
@@ -181,7 +178,6 @@ const PROJECTS = [
   // ── Robotics / ROS ────────────────────────────────────────────────────────
 
   {
-    group:    "robotics / ros",
     type:     "software",
     category: "software · deep learning · ros",
     title:    "LPM-Net: Deep MPC Local Planner",
