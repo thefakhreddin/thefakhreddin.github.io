@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // ── Build a single card ───────────────────────────────────────────────────────
 function buildCard(p) {
   const thumb = p.img
-    ? `<img src="${p.img}" alt="${p.title}" loading="lazy" />`
+    ? `<img src="${p.img}" alt="${p.title}" />`
     : `<span class="thumb-placeholder">[ no image ]</span>`;
 
   const badge = p.source
