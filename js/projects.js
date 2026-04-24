@@ -193,7 +193,7 @@ const PROJECTS = [
     desc:     "Robot arm that locks a webcam onto a moving target using TFLite + MobileNet CNN on Raspberry Pi.",
     source:   "github",
     url:      "https://github.com/thefakhreddin/TFLite_CNN_2DOF_Object_Tracking_Arm",
-    img:      ""
+    img:      "assets/other/IMG_7572.JPG"
   },
   {
     type:     "software",
