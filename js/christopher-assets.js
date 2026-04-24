@@ -11,8 +11,9 @@ const CHRISTOPHER_ASSETS = [
   "photo_2026-04-24_10-40-11.jpg",
   "photo_2026-04-24_10-40-15 (2).jpg",
   "photo_2026-04-24_10-40-15.jpg",
-  "tn.jpg",
   "tn2.jpg",
+  "tn3.jpg",
+  "tr4.jpg",
   "video_2026-04-24_10-42-37.mp4",
   "video_2026-04-24_10-42-42.mp4",
   "video_2026-04-24_10-42-46.mp4"
