@@ -11,6 +11,8 @@ const IMG_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp']);
 const VID_EXTS = new Set(['.mp4', '.mov', '.webm', '.m4v']);
 const SKIP     = new Set(['tn3.jpg']);
 
+if (!fs.existsSync(ASSETS_DIR)) { console.log('Directory not found, skipping.'); process.exit(0); }
+
 const files = fs.readdirSync(ASSETS_DIR)
   .filter(f => {
     if (SKIP.has(f)) return false;

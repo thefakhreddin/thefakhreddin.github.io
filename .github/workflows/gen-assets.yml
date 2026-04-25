@@ -1,0 +1,35 @@
+name: Regenerate Asset Lists
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/other/**"
+      - "projects/**"
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Regenerate asset lists
+        run: |
+          node scripts/gen-gallery.js
+          node scripts/gen-christopher.js
+          node scripts/gen-aluminum-smelting.js
+
+      - name: Commit updated lists
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/gallery-assets.js js/christopher-assets.js js/aluminum-smelting-assets.js
+          git diff --cached --quiet && echo "No changes" || (git commit -m "chore: regenerate asset lists [skip ci]" && git push)
