@@ -25,6 +25,16 @@ const PROJECTS = [
     img:      "projects/Christopher/tn3.jpg"
   },
 
+  {
+    type:     "mechanical",
+    category: "mechanical · cnc machining",
+    title:    "Metal Hexapod Robot",
+    desc:     "Six-legged walking robot driven by a single DC motor through a crankshaft linkage mechanism. All six legs actuated by one actuator. Designed to be machined in a basic shop from flat aluminum or steel stock.",
+    source:   "personal",
+    url:      "metal-hexapod.html",
+    img:      "projects/Metal%20Hexapod%20Robot/photo_2026-05-05_22-30-14.jpg"
+  },
+
   // ── Research / Sensors ───────────────────────────────────────────────────
 
   {
