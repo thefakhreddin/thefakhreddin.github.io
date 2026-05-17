@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3-Wheel Omni Robot — Fakhreddin (Amir) Amirhosseini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-hero {
+      padding: 4rem 2.5rem 3rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .project-hero .section-kicker {
+      margin-bottom: 0.5rem;
+    }
+    .project-hero h1 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .project-hero .project-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .project-hero .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .project-hero p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .project-hero p:last-child {
+      margin-bottom: 0;
+    }
+    .project-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+    .project-gallery {
+      padding: 3rem 2.5rem 4rem;
+    }
+    .project-gallery .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .project-gallery h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    .gallery-empty {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-name">FAKHREDDIN (AMIR) AMIRHOSSEINI</a>
+  <ul class="nav-links">
+    <li><a href="index.html">home</a></li>
+    <li><a href="projects.html" class="nav-current">projects</a></li>
+    <li><a href="index.html#awards">awards</a></li>
+    <li><a href="index.html#research">research</a></li>
+    <li><a href="gallery.html">gallery</a></li>
+    <li><a href="index.html#about">about</a></li>
+    <li><a href="index.html#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- PROJECT DESCRIPTION -->
+<div class="project-hero">
+  <p class="section-kicker">original build · robotics · ros · firmware</p>
+  <h1>3-Wheel Omni Robot</h1>
+  <div class="project-meta">
+    <span class="tag">holonomic drive</span>
+    <span class="tag">3 omniwheels</span>
+    <span class="tag">rotary encoders</span>
+    <span class="tag">ROS</span>
+    <span class="tag">Arduino Mega</span>
+    <span class="tag">Raspberry Pi</span>
+    <span class="tag">SLAM</span>
+    <span class="tag">ultrasonic LIDAR</span>
+  </div>
+  <p>
+    A holonomic mobile robot platform built around three omnidirectional wheels arranged 120° apart,
+    each driven by a gearbox motor with a rotary encoder. The three-wheel configuration gives the robot
+    three degrees of freedom on the plane — it can move in any direction (x/y) and rotate (θ) simultaneously,
+    without needing to turn first.
+  </p>
+  <p>
+    The mechanical structure uses off-the-shelf Matrix kit aluminum extrusions. The electronics stack
+    is split across two boards: an Arduino Mega handles the low-level firmware — motor drivers, encoder
+    reading, closed-loop speed control — while a Raspberry Pi runs a full ROS environment on top. The
+    two communicate over serial, with ROS sending velocity commands down to the Arduino.
+  </p>
+  <p>
+    The sensing system is a custom ultrasonic LIDAR substitute. Six ultrasonic sensors are mounted on a
+    hexagonal platform at the top of the robot; a servo motor sweeps the platform back and forth to scan
+    the surrounding area. The sensor readings are processed on the Raspberry Pi and published as a point
+    cloud in ROS — enough data for the standard ROS navigation stack to do SLAM (simultaneous localization
+    and mapping) and full autonomous motion planning.
+  </p>
+  <p>
+    This approach trades millimeter accuracy for cost: a real spinning LIDAR is hundreds to thousands of
+    dollars. The spinning ultrasonic head is under $10 in parts.
+  </p>
+</div>
+
+<hr class="project-divider" />
+
+<!-- GALLERY -->
+<section class="project-gallery">
+  <div class="section-inner">
+    <h2>// photos &amp; videos</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <p class="gallery-empty" id="gallery-empty" style="display:none">// no media yet — check back soon</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© <span id="year"></span> Fakhreddin (Amir) Amirhosseini</span>
+  <span>github pages</span>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lb-close">✕</button>
+  <button class="lightbox-prev" id="lb-prev">←</button>
+  <button class="lightbox-next" id="lb-next">→</button>
+  <img class="lightbox-img" id="lb-img" src="" alt="" />
+  <video class="lightbox-video" id="lb-video" controls playsinline muted style="display:none">
+    <source id="lb-video-src" src="" type="video/mp4">
+  </video>
+  <p class="lightbox-counter" id="lb-counter"></p>
+</div>
+
+<script src="js/omni-robot-assets.js" defer></script>
+<script defer>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function initGallery() {
+    const grid  = document.getElementById('gallery-grid');
+    const empty = document.getElementById('gallery-empty');
+    if (!grid || typeof OMNI_ROBOT_ASSETS === 'undefined') return;
+
+    if (!OMNI_ROBOT_ASSETS.length) { empty.style.display = ''; return; }
+
+    const BASE     = 'projects/Omni%20directional%20mobile%20robot/';
+    const IMG_EXTS = /\.(jpg|jpeg|png|gif|webp)$/i;
+    const VID_EXTS = /\.(mp4|mov|webm|m4v)$/i;
+    const MOV_EXTS = /\.mov$/i;
+
+    OMNI_ROBOT_ASSETS.forEach(file => {
+      const path = BASE + encodeURIComponent(file);
+      const item = document.createElement('div');
+
+      if (IMG_EXTS.test(file)) {
+        item.className = 'gallery-item';
+        const img = document.createElement('img');
+        img.src = path;
+        img.loading = 'lazy';
+        item.appendChild(img);
+
+      } else if (VID_EXTS.test(file)) {
+        item.className = 'gallery-item gallery-item--video';
+        const video = document.createElement('video');
+        video.setAttribute('data-lazy', '');
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.setAttribute('playsinline', '');
+        video.preload = 'none';
+
+        if (MOV_EXTS.test(file)) {
+          const s1 = document.createElement('source'); s1.dataset.src = path; s1.type = 'video/mp4';       video.appendChild(s1);
+          const s2 = document.createElement('source'); s2.dataset.src = path; s2.type = 'video/quicktime'; video.appendChild(s2);
+        } else {
+          const s = document.createElement('source'); s.dataset.src = path; s.type = 'video/mp4'; video.appendChild(s);
+        }
+        item.appendChild(video);
+      }
+
+      if (item.firstChild) grid.appendChild(item);
+    });
+
+    initLightbox();
+    initLazyVideos();
+  }
+
+  function initLightbox() {
+    const lb       = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lb-img');
+    const lbVideo  = document.getElementById('lb-video');
+    const lbVidSrc = document.getElementById('lb-video-src');
+    const counter  = document.getElementById('lb-counter');
+    let items = [], current = 0;
+
+    lbVideo.muted = true;
+    lbVideo.addEventListener('volumechange', () => { lbVideo.muted = true; });
+
+    function buildItems() {
+      items = Array.from(document.querySelectorAll('.gallery-item')).map(el => {
+        const img = el.querySelector('img');
+        if (img) return { type: 'image', src: img.src, alt: img.alt };
+        const video = el.querySelector('video');
+        if (video) {
+          const source = video.querySelector('source');
+          return { type: 'video', src: source ? (source.src || source.dataset.src || '') : '' };
+        }
+        return null;
+      }).filter(Boolean);
+    }
+
+    function show(index) {
+      if (!items.length) buildItems();
+      current = (index + items.length) % items.length;
+      const item = items[current];
+      counter.textContent = `${current + 1} / ${items.length}`;
+      if (item.type === 'image') {
+        lbImg.src = item.src; lbImg.alt = item.alt || '';
+        lbImg.style.display = ''; lbVideo.style.display = 'none'; lbVideo.pause();
+      } else {
+        lbImg.style.display = 'none'; lbImg.src = '';
+        lbVidSrc.src = item.src; lbVideo.muted = true; lbVideo.load(); lbVideo.style.display = '';
+      }
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      lb.classList.remove('open');
+      lbImg.src = ''; lbVideo.pause(); lbVidSrc.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('gallery-grid').addEventListener('click', e => {
+      const el = e.target.closest('.gallery-item');
+      if (!el) return;
+      buildItems();
+      show(Array.from(document.querySelectorAll('.gallery-item')).indexOf(el));
+    });
+
+    document.getElementById('lb-close').addEventListener('click', close);
+    document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
+    document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+
+    let touchX = 0;
+    lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) dx < 0 ? show(current + 1) : show(current - 1);
+    });
+  }
+
+  function initLazyVideos() {
+    const videos = document.querySelectorAll('video[data-lazy]');
+    if (!videos.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const v = entry.target;
+        v.querySelectorAll('source[data-src]').forEach(s => { s.src = s.dataset.src; delete s.dataset.src; });
+        v.load(); v.removeAttribute('data-lazy'); obs.unobserve(v);
+      });
+    }, { rootMargin: '400px' });
+    videos.forEach(v => obs.observe(v));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGallery);
+  } else {
+    initGallery();
+  }
+</script>
+
+</body>
+</html>

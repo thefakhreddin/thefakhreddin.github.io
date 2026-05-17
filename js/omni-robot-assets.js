@@ -1,0 +1,10 @@
+const OMNI_ROBOT_ASSETS = [
+  "IMG_0659.JPG",
+  "IMG_0660.JPG",
+  "IMG_0662.JPG",
+  "IMG_0665.JPG",
+  "IMG_0666.JPG",
+  "IMG_0668.JPG",
+  "video_2026-04-19_17-46-58.mp4",
+  "video_2026-04-19_17-50-07.mp4"
+];

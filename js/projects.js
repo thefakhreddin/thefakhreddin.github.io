@@ -207,12 +207,12 @@ const PROJECTS = [
   },
   {
     type:     "software",
-    category: "software · ros · firmware",
+    category: "software · robotics · ros",
     title:    "3-Wheel Omni Robot (ROS)",
-    desc:     "Omni-directional 3-wheeled mobile robot with real-time ROS control and an onboard SoC workspace.",
-    source:   "github",
-    url:      "https://github.com/thefakhreddin/3omni_wheel_robot_rtos",
-    img:      ""
+    desc:     "Holonomic 3-wheeled mobile robot with full ROS navigation stack. Three omniwheels at 120° give 3-DOF planar motion. Spinning ultrasonic sensor head acts as a low-cost LIDAR substitute for SLAM and motion planning.",
+    source:   "personal",
+    url:      "omni-robot.html",
+    img:      "projects/Omni%20directional%20mobile%20robot/IMG_0659.JPG"
   },
   {
     type:     "software",
