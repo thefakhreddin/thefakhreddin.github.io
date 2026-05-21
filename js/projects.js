@@ -58,10 +58,10 @@ const PROJECTS = [
   },
 
   {
-    type:     "software",
-    category: "simulation · fem · mems",
+    type:     "mechanical",
+    category: "mechanical · simulation · mems",
     title:    "MEMS Resonator FEM Study",
-    desc:     "FEM analysis of a MEMS spring–proof mass resonator in SolidWorks and COMSOL Multiphysics. Characterized resonant deflection and von Mises stress distribution across the flexure springs under harmonic excitation.",
+    desc:     "FEM analysis of a MEMS spring–proof mass resonator in SolidWorks and COMSOL Multiphysics. Tuned resonance frequency by varying proof mass and cantilever spring stiffness within conventional MEMS fabrication constraints.",
     source:   "personal",
     url:      "mems-resonator.html",
     img:      "projects/memsResonator/180resonanceDeflection.png"
