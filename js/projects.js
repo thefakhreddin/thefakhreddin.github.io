@@ -35,6 +35,16 @@ const PROJECTS = [
     img:      "projects/Metal%20Hexapod%20Robot/photo_2026-05-05_22-30-14.jpg"
   },
 
+  {
+    type:     "mechanical",
+    category: "mechanical · robotics · ros",
+    title:    "3-Wheel Omni Robot (ROS)",
+    desc:     "Holonomic 3-wheeled mobile robot with full ROS navigation stack. Three omniwheels at 120° give 3-DOF planar motion. Spinning ultrasonic sensor head acts as a low-cost LIDAR substitute for SLAM and motion planning.",
+    source:   "personal",
+    url:      "omni-robot.html",
+    img:      "projects/Omni%20directional%20mobile%20robot/IMG_0659.JPG"
+  },
+
   // ── Research / Sensors ───────────────────────────────────────────────────
 
   {
@@ -204,15 +214,6 @@ const PROJECTS = [
     source:   "github",
     url:      "https://github.com/thefakhreddin/TFLite_CNN_2DOF_Object_Tracking_Arm",
     img:      "assets/other/IMG_7572.JPG"
-  },
-  {
-    type:     "mechanical",
-    category: "mechanical · robotics · ros",
-    title:    "3-Wheel Omni Robot (ROS)",
-    desc:     "Holonomic 3-wheeled mobile robot with full ROS navigation stack. Three omniwheels at 120° give 3-DOF planar motion. Spinning ultrasonic sensor head acts as a low-cost LIDAR substitute for SLAM and motion planning.",
-    source:   "personal",
-    url:      "omni-robot.html",
-    img:      "projects/Omni%20directional%20mobile%20robot/IMG_0659.JPG"
   },
   {
     type:     "software",
