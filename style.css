@@ -248,6 +248,20 @@ nav {
   width: 100%;
   height: auto;
 }
+
+/* ── LEGO VIDEO (home page, natural aspect ratio in section-inner) ── */
+.lego-video-banner {
+  display: block;
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.lego-video-banner video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .featured-overlay {
   position: absolute;
   inset: 0;

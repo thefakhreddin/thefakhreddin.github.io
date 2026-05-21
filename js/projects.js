@@ -206,8 +206,8 @@ const PROJECTS = [
     img:      "assets/other/IMG_7572.JPG"
   },
   {
-    type:     "software",
-    category: "software · robotics · ros",
+    type:     "mechanical",
+    category: "mechanical · robotics · ros",
     title:    "3-Wheel Omni Robot (ROS)",
     desc:     "Holonomic 3-wheeled mobile robot with full ROS navigation stack. Three omniwheels at 120° give 3-DOF planar motion. Spinning ultrasonic sensor head acts as a low-cost LIDAR substitute for SLAM and motion planning.",
     source:   "personal",
