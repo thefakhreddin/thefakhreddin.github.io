@@ -57,6 +57,16 @@ const PROJECTS = [
     img:      "projects/Aluminum%20Smelting%20Sensor/tn3.jpg"
   },
 
+  {
+    type:     "software",
+    category: "simulation · fem · mems",
+    title:    "MEMS Resonator FEM Study",
+    desc:     "FEM analysis of a MEMS spring–proof mass resonator in SolidWorks and COMSOL Multiphysics. Characterized resonant deflection and von Mises stress distribution across the flexure springs under harmonic excitation.",
+    source:   "personal",
+    url:      "mems-resonator.html",
+    img:      "projects/memsResonator/180resonanceDeflection.png"
+  },
+
   // ── LEGO Mechanical ──────────────────────────────────────────────────────
 
   {
@@ -214,6 +224,15 @@ const PROJECTS = [
     source:   "github",
     url:      "https://github.com/thefakhreddin/TFLite_CNN_2DOF_Object_Tracking_Arm",
     img:      "assets/other/IMG_7572.JPG"
+  },
+  {
+    type:     "software",
+    category: "software · computer vision · education",
+    title:    "Vision Coding",
+    desc:     "Android app + vision system for tangible block-based programming. Physical jigsaw-shaped coding blocks are arranged by hand; the camera detects and classifies each block and translates the layout into a robot command sequence. Screen-free coding for children.",
+    source:   "personal",
+    url:      "vision-coding.html",
+    img:      "projects/visionCoding/photo_2021-12-07_11-09-15.jpg"
   },
   {
     type:     "software",
