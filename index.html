@@ -139,14 +139,22 @@
         <h2>LEGO Projects</h2>
       </div>
     </div>
-    <a class="lego-video-banner" href="projects.html">
-      <video autoplay loop muted playsinline>
+    <div class="lego-video-banner">
+      <video id="lego-video" autoplay loop muted playsinline>
         <source src="projects/legoSummary.mp4" type="video/mp4">
       </video>
       <div class="featured-overlay">
-        <span class="featured-tag">// all LEGO mechanisms →</span>
+        <a href="projects.html" class="featured-tag">// all LEGO mechanisms →</a>
       </div>
-    </a>
+      <div class="lego-controls">
+        <input type="range" class="lego-seek" min="0" max="100" value="0" step="0.1" />
+        <button class="lego-fullscreen-btn" title="Fullscreen">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 6V1h5M10 1h5v5M15 10v5h-5M6 15H1v-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -360,6 +368,62 @@
   <span>github pages</span>
 </footer>
 
+<script>
+  (function () {
+    function initLegoControls() {
+      const video = document.getElementById('lego-video');
+      const seek  = document.querySelector('.lego-seek');
+      const fsBtn = document.querySelector('.lego-fullscreen-btn');
+      if (!video || !seek || !fsBtn) return;
+
+      // Keep seek bar in sync with playback
+      video.addEventListener('timeupdate', function () {
+        if (!video.duration) return;
+        seek.value = (video.currentTime / video.duration) * 100;
+      });
+
+      // Set progress fill on the track
+      function updateTrack() {
+        seek.style.setProperty('--pct', seek.value + '%');
+      }
+      video.addEventListener('timeupdate', updateTrack);
+
+      // Scrub
+      seek.addEventListener('mousedown', function (e) { e.stopPropagation(); });
+      seek.addEventListener('click',     function (e) { e.stopPropagation(); });
+      seek.addEventListener('input', function (e) {
+        e.stopPropagation();
+        if (video.duration) video.currentTime = (seek.value / 100) * video.duration;
+        updateTrack();
+      });
+
+      // Fullscreen
+      fsBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const wrapper = video.closest('.lego-video-banner');
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          (wrapper.requestFullscreen ? wrapper.requestFullscreen() : video.requestFullscreen())
+            .catch(function () {});
+        }
+      });
+
+      // Update fullscreen icon on state change
+      document.addEventListener('fullscreenchange', function () {
+        fsBtn.innerHTML = document.fullscreenElement
+          ? '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1H1v5M1 6V1M10 1h5v5M15 6V1M1 10v5h5M6 15H1M15 10v5h-5M10 15h5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6V1h5M10 1h5v5M15 10v5h-5M6 15H1v-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLegoControls);
+    } else {
+      initLegoControls();
+    }
+  })();
+</script>
 <script src="js/main.js" defer></script>
 
 </body>

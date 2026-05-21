@@ -256,12 +256,82 @@ nav {
   width: 100%;
   border: 1px solid var(--border);
   overflow: hidden;
+  cursor: default;
 }
 .lego-video-banner video {
   display: block;
   width: 100%;
   height: auto;
 }
+
+/* Controls bar — hidden until hover */
+.lego-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.lego-video-banner:hover .lego-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Seek slider */
+.lego-seek {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.9) var(--pct, 0%),
+    rgba(255,255,255,0.25) var(--pct, 0%),
+    rgba(255,255,255,0.25) 100%
+  );
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+.lego-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.lego-seek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Fullscreen button */
+.lego-fullscreen-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+.lego-fullscreen-btn:hover { opacity: 1; }
 .featured-overlay {
   position: absolute;
   inset: 0;
